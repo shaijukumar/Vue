@@ -1,0 +1,10 @@
+echo "# Vue" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/shaijukumar/Vue.git
+git push -u origin master
+
+Git add . 
+git commit -m "First Change"
+git push origin master
