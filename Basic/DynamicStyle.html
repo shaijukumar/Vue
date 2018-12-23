@@ -1,32 +1,12 @@
 
 <!-- Put this in the HTML section in JSFiddle! -->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- https://www.udemy.com/vuejs-2-the-complete-guide/learn/v4/t/lecture/5941092?start=262 -->
 
 <div id="app">
-	<p v-once >{{ title }}</p>
-	<p>{{testFun()}}</p>
-	<a v-bind:href ="link">{{linkTitle}}</a>
-	
-
-	<p v-html="finishedLink" ></p>
-
-
-	<button v-on:click="Couter(3, $event)">Click Me({{count}})</button>
-
-	<button v-on:click="{{count++}}">Click Me({{count}})</button>
-	<h1>{{output}}</h1>
-
-	<p v-on:mousemove="updateCoordinates" >
-		Coorinates : {{x}} - {{y}}
-		<p v-on:mousemove.stop>DEAD SPOT</p>
-	</p>
-
-	<input type="text" v-on:keyup="alertMe">
-	<input type="text" v-on:keyup.enter.space="alertMe">
-
-
-	<input type="text"  v-model="title" >{{title}}
-
+	<div class="demo"></div>
+	<div class="demo"></div>
+	<div class="demo"></div>
 </div>
 
 <script>
@@ -34,44 +14,11 @@
 new Vue({
 	el: '#app',
 	data: {
-		title: 'Hello World!',
-		linkTitle: 'Gmail',
-		link: 'https://mail.google.com',
-		finishedLink: '<a href="https://mail.google.com">Gmail</a>',
-		count : 0,
-		x:0,
-		y:0
+		title: '',
+		
 	},
 
-	computed:{
-		output : function(){
-			return this.count > 5 ? 'Greater than 5' : 'Less than 5';
-		}
-	},
-	watch:{
-		count : function(){
-			return this.count > 5 ? 'Greater than 5' : 'Less than 5';
-		}
-	},
-	methods: {
-		testFun:  function () {
-			//this.title = "Updated Title"
-			return this.title;
-		},
-		Couter:  function (step, event) {
-			this.count += step;
-
-			this.x = event.clientX;
-			this.y = event.clientY;
-		},
-		updateCoordinates:  function (event) {
-			this.x = event.clientX;
-			this.y = event.clientY;
-		},
-		alertMe:  function (event) {
-			alert('1')
-		}
-	}
+	
 })
 
 
