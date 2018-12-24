@@ -1,0 +1,32 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+
+<div id="app">
+
+    <p v-if="show">You can see me! <span>Hello!</span></p>
+    <p v-else>Now you see me!</p>
+
+    <!--template is html5 tag, wil not show in html-->
+    <template v-if="show">        
+        <p>Inside a template</p>
+    </template>
+    <template v-else>
+        <h1>else part</h1>
+    </template>
+
+    <p v-show="show">Do you also see me?</p>
+
+
+    <p v-show="show">From v-Show</p>
+
+    <button @click="show = !show">Switch</button>
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+        show: true
+    }
+});
+</script>
